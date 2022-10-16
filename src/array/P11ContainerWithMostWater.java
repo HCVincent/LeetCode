@@ -4,21 +4,16 @@ public class P11ContainerWithMostWater {
 	public int maxArea(int[] height) {
 		int left = 0;
 		int right = height.length - 1;
-		int max = 0;
+		int area = 0;
 		while (left < right) {
-			int w = right - left;
-			int h = Math.min(height[left], height[right]);
-			int area = h * w;
-			max = Math.max(max, area);
-			if (height[left] < height[right])
-				left++;
-			else if (height[left] > height[right])
+			if (height[left] > height[right]) {
+				area = Math.max(area, (right - left) * height[right]);
 				right--;
-			else {
+			} else {
+				area = Math.max(area, (right - left) * height[left]);
 				left++;
-				right--;
 			}
 		}
-		return max;
+		return area;
 	}
 }
