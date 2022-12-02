@@ -1,6 +1,6 @@
 package array;
 
-public class P4MedianOfTwoSortedArrays {
+public class P04MedianOfTwoSortedArrays {
 	public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 		int index1 = 0;
 		int index2 = 0;
